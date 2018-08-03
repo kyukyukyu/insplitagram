@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if completed {
-            let alertController = UIAlertController.init(title: "Insplitagram", message: "Trimmed the video up to one minute successfully.", preferredStyle: .alert)
+            let alertController = UIAlertController.init(title: "Insplitagram", message: "Splitted the video every one minute successfully.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
             return
@@ -64,22 +64,20 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         
         trimQueue.async {
-            let outUrl = URL(fileURLWithPath: NSTemporaryDirectory())
-                .appendingPathComponent(UUID().uuidString)
-                .appendingPathExtension("mov")
+            let destDirUrl = URL(fileURLWithPath: NSTemporaryDirectory())
             
-            defer {
-                DispatchQueue.global(qos: .utility).async {
-                    try? FileManager.default.removeItem(at: outUrl)
+            let outputUrls = splitEveryOneMinute(srcUrl: inUrl, destDirUrl: destDirUrl)
+            
+            try? PHPhotoLibrary.shared().performChangesAndWait {
+                for url in outputUrls {
+                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
                 }
             }
             
-            guard trimOneMinute(inUrl: inUrl, outUrl: outUrl) else {
-                return
-            }
-            
-            try? PHPhotoLibrary.shared().performChangesAndWait {
-                PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: outUrl)
+            DispatchQueue.global(qos: .utility).async {
+                for url in outputUrls {
+                    try? FileManager.default.removeItem(at: url)
+                }
             }
             
             DispatchQueue.main.async {
