@@ -14,6 +14,8 @@
 		CEEFB03C2113479200EBDB5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEFB03A2113479200EBDB5D /* LaunchScreen.storyboard */; };
 		CEEFB0472113479200EBDB5D /* InsplitagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFB0462113479200EBDB5D /* InsplitagramTests.swift */; };
 		CEEFB0522113479200EBDB5D /* InsplitagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFB0512113479200EBDB5D /* InsplitagramUITests.swift */; };
+		CEEFB061211347AA00EBDB5D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEFB060211347AA00EBDB5D /* AVFoundation.framework */; };
+		CEEFB063211347DF00EBDB5D /* Insplitagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFB062211347DF00EBDB5D /* Insplitagram.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CE2C549D21136356009D4750 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CE2C548C21136356009D4750 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		CE2C548E21136356009D4750 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		CEEFB02E2113479200EBDB5D /* Insplitagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insplitagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEFB0312113479200EBDB5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEFB0332113479200EBDB5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +64,8 @@
 		CEEFB04D2113479200EBDB5D /* InsplitagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsplitagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEFB0512113479200EBDB5D /* InsplitagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsplitagramUITests.swift; sourceTree = "<group>"; };
 		CEEFB0532113479200EBDB5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEEFB060211347AA00EBDB5D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CEEFB062211347DF00EBDB5D /* Insplitagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insplitagram.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEEFB061211347AA00EBDB5D /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +101,7 @@
 				CEEFB0452113479200EBDB5D /* InsplitagramTests */,
 				CEEFB0502113479200EBDB5D /* InsplitagramUITests */,
 				CEEFB02F2113479200EBDB5D /* Products */,
+				CEEFB05F211347AA00EBDB5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +124,7 @@
 				CEEFB0382113479200EBDB5D /* Assets.xcassets */,
 				CEEFB03A2113479200EBDB5D /* LaunchScreen.storyboard */,
 				CEEFB03D2113479200EBDB5D /* Info.plist */,
+				CEEFB062211347DF00EBDB5D /* Insplitagram.swift */,
 			);
 			path = Insplitagram;
 			sourceTree = "<group>";
@@ -125,6 +147,16 @@
 			path = InsplitagramUITests;
 			sourceTree = "<group>";
 		};
+		CEEFB05F211347AA00EBDB5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEEFB060211347AA00EBDB5D /* AVFoundation.framework */,
+				CE2C548C21136356009D4750 /* PhotosUI.framework */,
+				CE2C548E21136356009D4750 /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +167,7 @@
 				CEEFB02A2113479200EBDB5D /* Sources */,
 				CEEFB02B2113479200EBDB5D /* Frameworks */,
 				CEEFB02C2113479200EBDB5D /* Resources */,
+				CE2C549D21136356009D4750 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -261,6 +294,7 @@
 			files = (
 				CEEFB0342113479200EBDB5D /* ViewController.swift in Sources */,
 				CEEFB0322113479200EBDB5D /* AppDelegate.swift in Sources */,
+				CEEFB063211347DF00EBDB5D /* Insplitagram.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

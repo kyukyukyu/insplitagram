@@ -41,5 +41,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Needed to open your video files.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Needed to write trimmed video files.</string>
+	<key>NSExtensionAttributes</key>
+	<dict>
+		<key>PHSupportedMediaTypes</key>
+		<array>
+			<string>Video</string>
+		</array>
+	</dict>
 </dict>
 </plist>
